@@ -33,6 +33,8 @@ abstract class GoogleAuthController extends AbstractController
 
     protected abstract function getGoogleCredentialClass(): string;
 
+    protected abstract function getRedirectRouteAfterCallbackName(): string;
+
     /**
      * @Route("/google/auth", name="google_auth")
      *
@@ -99,6 +101,6 @@ abstract class GoogleAuthController extends AbstractController
             $logger->error($e->getMessage());
         }
 
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute($this->getRedirectRouteAfterCallbackName());
     }
 }

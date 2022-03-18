@@ -67,7 +67,9 @@
             "@auto-scripts"
         ],
         "post-update-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "php -r \"copy('vendor/Mizeraklid/googleauthsymfony/src/Controller/GoogleAuthControllerExample.php', 'src/Controller/GoogleAuthControllerExample.php');\"",
+            "php -r \"copy('vendor/Mizeraklid/googleauthsymfony/src/Entity/GoogleCredentialExample.php', 'src/Entity/GoogleCredentialExample.php');\""
         ]
     },
     "conflict": {

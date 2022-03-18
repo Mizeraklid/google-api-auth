@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mizeraklid\GoogleApiAuth\Controller;
 
 use Doctrine\Persistence\ManagerRegistry;
@@ -57,5 +59,10 @@ class GoogleAuthControllerExample extends GoogleAuthController
         LoggerInterface $logger
     ): RedirectResponse {
         return parent::redirectCallback($clientRegistry, $doctrine, $logger); // TODO: change routes
+    }
+
+    protected function getRedirectRouteAfterCallbackName(): string
+    {
+        return 'home';
     }
 }

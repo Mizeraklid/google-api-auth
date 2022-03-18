@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mizeraklid\GoogleApiAuth\Event;
 
 use Mizeraklid\GoogleApiAuth\Entity\GoogleCredentialInterface;
